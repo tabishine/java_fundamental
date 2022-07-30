@@ -14,5 +14,5 @@
 *.rar
 /.lift
 /.siri/
-
+.lift
 .idea
