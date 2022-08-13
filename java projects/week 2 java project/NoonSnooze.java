@@ -1,24 +1,32 @@
 public class NoonSnooze {
     public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
-        int start = 0;
-        int remainder = 0;
-        if (n < 60) {
-            System.out.println("12" + ":" + n);
-        }
-        if (n == 60) {
-            start += 1;
+        // this program takes minutes and prints the result time with day part
+        // take int command-line argument snooze
+        int snooze = Integer.parseInt(args[0]);
+        // using / and % operators to compute new values
+        int setTime = 12 * 60;
+        int day = 60 * 24;
+        int totalMinutes = setTime + snooze;
+        int realTime = totalMinutes % day;
+        int hours = realTime / 60;
+        int minuteResult = realTime % 60;
 
-            System.out.println(start + ":" + "00");
-        }
-        if (n > 60) {
-            int divide = n / 60;
-            start += divide;
-            n = n % 60;
-            remainder += n;
-            System.out.println(start + ":" + remainder);
-        }
+        // using ternary operator to determine day part: am or pm
+        String ampm = (hours < 12) ? "am" : " pm";
 
+        // using if else conditional to format the output
+        if (hours == 0)
+            System.out.printf((hours + 12) + ":%02d am", minuteResult);
+        else if (snooze < 60)
+            System.out.println("12" + ":" + snooze + " pm");
+        else if (hours < 12)
+            System.out.println((hours + 12) - 12 + ":" + minuteResult + " " + ampm);
+        else if (hours == 12)
+            System.out.println(hours + ":" + minuteResult + " " + ampm);
+        else
+            System.out.println((hours - 12) + ":" + minuteResult + "" + ampm);
     }
 }
+
+
 

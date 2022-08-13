@@ -1,50 +1,51 @@
-Programming Assignment: Hello, World
+Programming Assignment: Conditionals
 
+/******************************************************************************
+ ***            Some information to help us get to know you.                ***
+ ******************************************************************************/
 
+Nickname (i.e., what you prefer to be called in class): Tabi
+
+Cohort: nFactorial Start - Batch 23
+
+Confidence level (0 = very afraid, 5 = very confident) 0/1/2/3/4/5
+
+3.5 - tasks were soooo amazing for me...
 
 /**********************************************************************
- * Approximate number of hours to complete this assignment.
+ * Approximate number of hours to complete this assignment            *
  **********************************************************************/
 
 Number of hours:
-
-
-
-/*******************************************************************************
- *  Describe whatever help (if any) that you received. Don't include
- *  readings, lectures, and precepts, but do include any help from people
- *  (including course staff and classmates) and attribute them by name.
- ******************************************************************************/
-
+total approximately 3 days - at least 4 hours per day
 
 
 /******************************************************************************
- *  Did you encounter any serious problems, either installing the Java
- *  programming environment or writing the Java programs.
+ ***   Did you receive help from classmates or      ***
+ ***   anyone else? If so, please list their names. (
+ ***   or "Office hours on Thursday" is ok if you don't know their name.)   ***
  ******************************************************************************/
 
-Yes or no? 
+yes, from Vassiliy, Magzhan. And we have brainstorming with Sultan.
 
 /******************************************************************************
- *  In which spoken language is your voice recording?
+ ***   Did you encounter any serious problems? If yes, please describe.     ***
  ******************************************************************************/
 
+problems in NoonSnooze.java with hours and minutes, and with am pm adding
+in RandomWalkers.java my first method was without arrays, and I can't compute the final
+result because of wrong numbers and not appropriate variables in formula
 
 
 /******************************************************************************
- *  Do you release your voice recording into the public domain,
- *  so that we may use in a future offering of this course or another
- *  course?
- *
- *  You are not obliged to answer yes. We are just looking to collect
- *  some additional voices.
+ ***   List any other comments here.                                        ***
  ******************************************************************************/
 
-Yes or no? 
+this second project was much harder for me, than first project,
+but I tried my best for right RUN
 
+thank you for motivated quotations:
+p.s:
+i like this one
 
-/* *****************************************************************************
- *  List any other comments here. Feel free to provide any feedback   
- *  on how much you learned from doing the assignment, and whether    
- *  you enjoyed doing it.                                             
- **************************************************************************** */
+"Experience is a poor teacher: it gives its tests before it teaches its lessons."

@@ -1,0 +1,79 @@
+
+
+       public class NBodyProject {
+    final static double G = 6.67e-11;
+
+    public static double distance(double a, double b) {
+        return Math.sqrt(a * a + b * b);
+    }
+
+    public static void main(String[] args) {
+        double tau = Double.parseDouble(args[0]);
+        double dt = Double.parseDouble(args[1]);
+        int n = StdIn.readInt();
+        double radius = StdIn.readDouble();
+        StdOut.println(radius);
+        StdDraw.setXscale(-radius, radius);
+        StdDraw.setYscale(-radius, radius);
+
+        double[] x = new double[n];
+        double[] y = new double[n];
+        double[] vx = new double[n];
+        double[] vy = new double[n];
+        double[] mass = new double[n];
+        double[] fx = new double[n];
+        double[] fy = new double[n];
+        double[] ax = new double[n];
+        double[] ay = new double[n];
+        String[] image = new String[n];
+        double fxsum, fysum;
+
+        for (int i = 0; i < n; i++) {
+            x[i] = StdIn.readDouble();
+            y[i] = StdIn.readDouble();
+            vx[i] = StdIn.readDouble();
+            vy[i] = StdIn.readDouble();
+            mass[i] = StdIn.readDouble();
+            image[i] = StdIn.readString().trim();
+        } // наполнение массивов
+
+        for (double t = 0; t < tau; t += dt) {
+            for (int i = 0; i < n; i++) {
+                StdDraw.picture(0, 0, "starfield.jpg");
+                for (int k = 0; k < n; k++) {
+                    StdDraw.picture(x[k], y[k], image[k]);
+                }
+                StdDraw.show(500);
+                // StdDraw.pause();
+                fxsum = 0;
+                fysum = 0;
+                for (int j = 0; j < n; j++) {
+                    if (i != j) {
+                        fx[i] = (G * mass[i] * mass[j] / distance(x[i] - x[j], y[i] - y[j])
+                                * distance(
+                                x[i] - x[j], y[i] - y[j])) * (x[j] - x[i]) / distance(x[i] - x[j],
+                                                                                      y[i] - y[j]);
+                        fy[i] = (G * mass[i] * mass[j] / distance(x[i] - x[j], y[i] - y[j])
+                                * distance(
+                                x[i] - x[j], y[i] - y[j])) * (y[i] - y[j]) / distance(x[i] - x[j],
+                                                                                      y[i] - y[j]);
+                        fxsum += fx[i];
+                        fysum += fy[i];
+                    }
+                }
+
+                ax[i] = fxsum / mass[i];
+                ay[i] = fysum / mass[i];
+
+                vx[i] += ax[i] * dt;
+                vy[i] += ay[i] * dt;
+
+                x[i] = x[i] + vx[i] * dt;
+                y[i] = y[i] + vy[i] * dt;
+
+            }
+        }
+
+    }
+}
+
